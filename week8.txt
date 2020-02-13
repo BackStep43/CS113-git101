@@ -1,0 +1,76 @@
+Git Basic
+    
+    คำสั่งบน command prompt
+        
+        mkdir ชื่อไฟล์ เป็นคำสั่งในการสร้าง directory 
+        dir ใช้ดูรายการ directory และ files ใน working directory ปัจจุบัน
+        cd .. เปลี่ยน working directory เป็น directory ที่บบรจุ working directory
+
+     Initialize git repository ทำทุกครั้งที่มี git repository ใหม่ โดยใช้คำสั่ง
+
+            git init บน terminal bash บน visual studio 
+            จะพบไฟล์ที่ชื่อว่า git ใน directory
+
+    สามารตรวจสอบสถานะ ว่าไฟล์ใดมีการเปลี่ยนแปลงใน git repository โดยใช้คำสั่ง 
+
+            git status บน terminal bash บน visual studio 
+
+    การเพิ่มไฟล์ เพื่อจะ commit โดยใช้คำสั่ง 
+
+            git add ชื่อไฟล์ 
+
+    การยกเลิก add ใช้คำสั่ง
+
+            git reset <ชื่อไฟล์>   
+
+    การระบุตัวผู้ commit โดยใช้คำสั่ง
+
+            git config -- global user.name "ชื่อ"
+            git config -- global user.email "อีเมล"
+
+            ตรวจสอบ ใช้คำสั่ง
+
+                git config --global --list
+
+    commit ไฟล์ เพื่อเก็บ Checkpoint ของไฟล์ ใช่คำสั่ง
+
+            git commit -m "ชื่อไฟล์ที่บ่งบอกถึง Checkpoint "
+
+    การเพิ่มไฟล์ สามารถใช้ . (dot) ในการ add ทุกไฟล์ที่มีการเปลี่ยนแปลงใน directory 
+
+            git add .
+
+    การดู Checkpoint ทั้งหมด ใช้คำสั่ง
+
+            git log --all --decorate --oneline --graph
+
+    การเชื่อม local repository กับ github ใช้คำสั่ง
+
+            git remote add <ชื่อ remote> <git url>
+    
+    การลบ remote ใช้คำสั่ง
+
+            git remote remove <ชื่อ remote>
+
+    ต้องการส่งไฟล์และประวัติไปเก็บที่ github โดยใช้คำสั่ง
+
+            git push -u <ชื่อ remote> master
+            
+            ถ้าหากมีการ push อีก ใช้คำสั่ง
+
+                git push ได้เลย
+                
+    การนำ Checkpoint เก่ากลับมาทำงาน ใช้คำสั่ง
+
+            กลับมาทั้งหมด 
+
+                    git checkout <commit-id>
+
+            กลับมาบางไฟล์ 
+
+                    git checkout <commit-id> <ชื่อไฟล์>
+
+    ถ้าต้องการ clone  ใช้คำสั่ง
+
+            git clone <git-url>
+
