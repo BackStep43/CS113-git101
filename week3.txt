@@ -1,0 +1,49 @@
+Control Flow
+
+    if else 
+
+        if(expression)
+            statement
+        else
+            statement
+
+            expression คือ นิพจน์เงื่อนไข
+            statement  คือ ชุดคำสั่ง
+            else จะอยู่กับ if ที่ใกล้ที่สุด
+
+    Switch
+
+        ใช้ตรวจสอบเงื่อนไขถ้าค่า expression เข้ากับค่าค่าคงที่ ที่เป็นจำนวนเต็มตัวใด หลักจากนั้นจะเข้ามาใน statement ภายใต้ค่าคงที่นั้นลงมาเรื่อยๆ
+        จนกว่าจะเจอ break (คำสั่งหยุดทำงานใน loop) ถึงจะหลุดออกจาก Switch
+
+        default จะมีหรือไม่ก็ได้ แต่ถ้ามี statement ใน default จะทำงานเมื่อค่าของ expression ไม่ตรงกับ case อื่นเลย
+
+    Loops - While และ For
+
+        while loop 
+
+            while(expression)
+                statement
+            
+            เมื่อ expression เป็นจริง statement จะทำงาน วนไปเรื่อยๆจน expression เป็นเท็จ ถึงจะออก loop
+
+        for loop
+
+            for (expression 1; expression 2; expression3)
+                statement
+            
+            expression 1 และ expression 3 เป็นการเรียกใช้ ส่วน expression 2 เปรียบเทียบค่า
+
+        Loops - Do-While
+
+            do
+                statement
+            while(expression)
+
+            statement จะถูกทำงานก่อน แล้ว expression ค่อยทำงาน เมื่อ expression เป็นจริง statement จะทำงานอีกรอบ
+            แล้ว วนเรื่อยๆจน  expression เป็นเท็จ
+
+        Break และ Continue
+
+        break จะเป็นคำสั่งหยุด loop
+        continue เป็นคำสั่งบังคับให้เกิด loop ซ้ำ เนื่องจากต้องตรวจสอบ expression อีกครั้ง
