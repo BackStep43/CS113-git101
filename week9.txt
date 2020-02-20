@@ -1,0 +1,65 @@
+git Branch
+
+    การสร้างและการแยก Branch
+
+        คำสั่งสร้าง Branch 
+
+            git branch ( ชื่อ Branch )
+        
+        การตรวจสอบ Branch ว่ามีกี่ Branch คำสั่ง
+
+            git branch
+
+        การสลับเปลี่ยน Branch ใช้คำสั่ง
+
+            git checkout (ชื่อ Branch ที่จะสลับไป) 
+
+            สังเกต * จะอยู่หน้า Branch ที่ใช้ปัจจุบัน
+
+        การ Merge Branch แบบไม่มี Conflict 
+
+            การ Merge หรือ การรวม Branch จะต้องกลับไปที่ Branch ปลายทางก่อนคือ จะต้องกลับไปที่ Branch master ใช้คำสั่ง
+
+                git checkout master
+
+            รวม Branch (Merge) ใช้คำสั่ง
+
+                git merge (ชื่อ Branch ที่จะนำไปรวมกับ master)
+
+            ถ้าไม่มี Conflict จะทำให้ git สร้าง commit ของการ merge นั้นไปเลย ดังนั้นจึงต้อง ใส่ commit message ด้วย vi ถ้าใช้ default merge commit message ใช้คำสั่ง
+
+                ให้กด ESC แล้วพิมพ์ :wq! แล้วกด Enter
+
+            การ Pull แบบไม่มี Conflict
+
+                การดึงสิ่งที่เปลี่ยนแปลงจาก Branch ที่อยู่ปัจจุบัน ใช้คำสั่ง
+
+                    git pull ( ชื่อ remote ) ( ชื่อ Branch )
+
+            การ merge แบบมี Conflict
+
+                Conflict หรือ ความขัดแย้ง เกิดจากการแก้ไขข้อมูลในไฟล์เดิม บรรทัดเดิม ที่อยู่ต่าง Branch กัน เมื่อ merge แล้ว git ตัดสินใจไม่ได้ว่าใช้ข้อมูลใน Branch ไหน
+
+            การ merge Branch ที่ต้องการเข้าไปใน Branch master 
+
+                กลับไป Branch master ก่อน ใช้คำสั่ง
+
+                    git checkout master 
+
+                แล้ว merge ใช้คำสั่ง
+
+                    git merge ( ชื่อ Branch ) สังเกต merge จะไม่สำเร็จ มีข้อความว่า Conflict ขึ้น
+
+                    ไฟล์ที่มีการแก้ไข ใน Branch master จะเห็นว่า git สร้างข้อความที่อธิบาย Conflict
+
+                        หาก Editor มี tool ที่ช่วยจัดการ Conflict จะสามารเลือกได้ว่าจะใช้ข้อมูลใน Branch เช่น Atom
+
+                        หาก Editor ไม่มี tool ช่วย ต้อง เพิ่ม/แก้/ลบ เอง เช่น sublime
+            
+            เมื่อ Conflict สำเร็จ ให้ commit การ merge นั้นด้วย ใช้คำสั่ง
+
+                git commit -m "ข้อความที่จะใส่"
+
+            การ pull แบบมี Conflict
+
+                หากมีการ pull ในไฟล์ที่มีการแก้ไข บรรทัดเดียว ให้ทำการ แก้ไข Conflict ในไฟล์นั้น จากนั้นสร้าง commit
